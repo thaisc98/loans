@@ -1,0 +1,41 @@
+package bank.loans.model;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.sql.Date;
+
+@Entity
+@Getter
+@Setter
+@ToString
+public class Loans {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "customer_id")
+    private int customerId;
+
+    @Column(name="start_at")
+    private Date startAt;
+
+    @Column(name = "loan_type")
+    private String loanType;
+
+    @Column(name = "total_loan")
+    private int totalLoan;
+
+    @Column(name = "amount_paid")
+    private int amountPaid;
+
+    @Column(name = "outstanding_amount")
+    private int outstandingAmount;
+
+    @Column(name = "create_at")
+    private String createAt;
+}
